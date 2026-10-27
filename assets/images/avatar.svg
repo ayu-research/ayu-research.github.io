@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" fill="none">
+  <defs>
+    <radialGradient id="avatarBgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFF0F5" />
+      <stop offset="60%" stop-color="#FFE3EC" />
+      <stop offset="100%" stop-color="#FFCAD4" />
+    </radialGradient>
+    <linearGradient id="blazerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A344D" />
+      <stop offset="100%" stop-color="#2D1F30" />
+    </linearGradient>
+    <linearGradient id="blouseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FFEBF0" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDDFD0" />
+      <stop offset="100%" stop-color="#F5C7B3" />
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D2924" />
+      <stop offset="100%" stop-color="#1F1512" />
+    </linearGradient>
+    <clipPath id="avatarClip">
+      <circle cx="200" cy="200" r="185" />
+    </clipPath>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background circle with soft blush gradient -->
+  <circle cx="200" cy="200" r="188" fill="url(#avatarBgGrad)" stroke="#FB6F92" stroke-width="3" stroke-opacity="0.4" />
+  <circle cx="200" cy="200" r="176" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4 6" opacity="0.7" />
+
+  <g clip-path="url(#avatarClip)">
+    <!-- Soft background aura -->
+    <circle cx="200" cy="160" r="120" fill="#FFFFFF" opacity="0.4" />
+
+    <!-- Hair Back -->
+    <path d="M120,180 C110,120 140,80 200,80 C260,80 290,120 280,180 C280,240 280,270 280,280 C270,290 260,250 250,230 C240,210 160,210 150,230 C140,250 130,290 120,280 Z" fill="url(#hairGrad)" />
+
+    <!-- Shoulders / Academic Attire / Blazer -->
+    <path d="M100,380 C100,320 140,285 170,280 L200,310 L230,280 C260,285 300,320 300,380 Z" fill="url(#blazerGrad)" />
+    
+    <!-- Blouse / Inner shirt -->
+    <path d="M170,280 L200,340 L230,280 C215,285 185,285 170,280 Z" fill="url(#blouseGrad)" stroke="#E899AC" stroke-width="1" />
+    <!-- Rose gold necklace / pendant -->
+    <path d="M185,290 Q200,305 215,290" fill="none" stroke="#D4A373" stroke-width="1.8" />
+    <circle cx="200" cy="304" r="3.5" fill="#FAEDCD" stroke="#D4A373" stroke-width="1.2" />
+
+    <!-- Neck -->
+    <path d="M180,225 L180,282 C186,285 214,285 220,282 L220,225 Z" fill="url(#skinGrad)" />
+    <path d="M180,245 C190,255 210,255 220,245 L220,255 C210,265 190,265 180,255 Z" fill="#E8B09C" opacity="0.4" />
+
+    <!-- Head / Face -->
+    <path d="M150,170 C150,225 172,252 200,252 C228,252 250,225 250,170 C250,130 228,115 200,115 C172,115 150,130 150,170 Z" fill="url(#skinGrad)" />
+
+    <!-- Cheeks blush -->
+    <circle cx="168" cy="202" r="10" fill="#FB6F92" opacity="0.3" filter="url(#softGlow)" />
+    <circle cx="232" cy="202" r="10" fill="#FB6F92" opacity="0.3" filter="url(#softGlow)" />
+
+    <!-- Eyes and Eyebrows -->
+    <path d="M164,166 Q178,162 190,167" fill="none" stroke="#2B1A17" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M210,167 Q222,162 236,166" fill="none" stroke="#2B1A17" stroke-width="2.5" stroke-linecap="round" />
+    <!-- Eyes -->
+    <circle cx="178" cy="178" r="4.5" fill="#2B1A17" />
+    <circle cx="179.5" cy="176.5" r="1.5" fill="#FFFFFF" />
+    <circle cx="222" cy="178" r="4.5" fill="#2B1A17" />
+    <circle cx="223.5" cy="176.5" r="1.5" fill="#FFFFFF" />
+
+    <!-- Modern stylish glasses (Rose-gold round academic frames) -->
+    <circle cx="177" cy="178" r="15" fill="none" stroke="#B87333" stroke-width="1.8" opacity="0.9" />
+    <circle cx="223" cy="178" r="15" fill="none" stroke="#B87333" stroke-width="1.8" opacity="0.9" />
+    <path d="M192,178 L208,178" stroke="#B87333" stroke-width="1.8" />
+    <path d="M162,177 L150,174" stroke="#B87333" stroke-width="1.8" />
+    <path d="M238,177 L250,174" stroke="#B87333" stroke-width="1.8" />
+
+    <!-- Nose -->
+    <path d="M198,185 Q200,198 203,198" fill="none" stroke="#DB9A87" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Gentle Academic Smile -->
+    <path d="M186,218 Q200,228 214,218" fill="none" stroke="#D1506D" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Hair Front / Bangs / Waves -->
+    <path d="M148,155 C155,115 180,105 200,105 C230,105 252,118 252,155 C242,135 220,130 195,138 C175,145 160,140 148,155 Z" fill="url(#hairGrad)" />
+    <!-- Hair strands framing face -->
+    <path d="M146,155 C142,185 146,215 152,235 C150,210 152,175 158,160 Z" fill="url(#hairGrad)" />
+    <path d="M254,155 C258,185 254,215 248,235 C250,210 248,175 242,160 Z" fill="url(#hairGrad)" />
+
+    <!-- Daisy hairpin accent on side -->
+    <g transform="translate(242, 140) scale(0.32)">
+      <circle cx="0" cy="0" r="14" fill="#FFC107" />
+      <ellipse cx="0" cy="-28" rx="8" ry="16" fill="#FFFFFF" />
+      <ellipse cx="20" cy="-20" rx="8" ry="16" fill="#FFFFFF" transform="rotate(45 20 -20)" />
+      <ellipse cx="28" cy="0" rx="8" ry="16" fill="#FFFFFF" transform="rotate(90 28 0)" />
+      <ellipse cx="20" cy="20" rx="8" ry="16" fill="#FFFFFF" transform="rotate(135 20 20)" />
+      <ellipse cx="0" cy="28" rx="8" ry="16" fill="#FFFFFF" />
+      <ellipse cx="-20" cy="20" rx="8" ry="16" fill="#FFFFFF" transform="rotate(225 -20 20)" />
+      <ellipse cx="-28" cy="0" rx="8" ry="16" fill="#FFFFFF" transform="rotate(270 -28 0)" />
+      <ellipse cx="-20" cy="-20" rx="8" ry="16" fill="#FFFFFF" transform="rotate(315 -20 -20)" />
+      <circle cx="0" cy="0" r="10" fill="#FFB703" />
+    </g>
+
+    <!-- Blazer Lapels & Pin -->
+    <path d="M168,282 L150,380 L185,380 L200,320 Z" fill="#3D293F" opacity="0.6" />
+    <path d="M232,282 L250,380 L215,380 L200,320 Z" fill="#3D293F" opacity="0.6" />
+    <!-- Campus badge / daisy pin on lapel -->
+    <circle cx="162" cy="330" r="5" fill="#FFE066" stroke="#C23A60" stroke-width="1" />
+  </g>
+
+  <!-- Decorative mini daisy along frame bottom-right -->
+  <g transform="translate(325, 320) scale(0.55)">
+    <circle cx="0" cy="0" r="15" fill="#FFAA00" />
+    <!-- 8 petals -->
+    <ellipse cx="0" cy="-30" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" />
+    <ellipse cx="21" cy="-21" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" transform="rotate(45 21 -21)" />
+    <ellipse cx="30" cy="0" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" transform="rotate(90 30 0)" />
+    <ellipse cx="21" cy="21" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" transform="rotate(135 21 21)" />
+    <ellipse cx="0" cy="30" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" />
+    <ellipse cx="-21" cy="21" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" transform="rotate(225 -21 21)" />
+    <ellipse cx="-30" cy="0" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" transform="rotate(270 -30 0)" />
+    <ellipse cx="-21" cy="-21" rx="8" ry="18" fill="#FFFFFF" stroke="#FFE3EC" transform="rotate(315 -21 -21)" />
+    <circle cx="0" cy="0" r="12" fill="#FFAA00" />
+  </g>
+</svg>

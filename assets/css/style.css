@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Dr. Ayu Lestari Academic Portfolio - Daisy & Soft Pink Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-pink-50: #FFF5F7;
+  --color-pink-100: #FFEAEF;
+  --color-pink-200: #FFD4DF;
+  --color-pink-300: #FFB3C6;
+  --color-pink-400: #FB6F92;
+  --color-pink-500: #E85079;
+  --color-pink-600: #C23058;
+  --color-plum-900: #261C26;
+  --color-plum-800: #382B38;
+  --color-plum-700: #4F3F50;
+  --color-daisy-gold: #F7B733;
+  --color-daisy-yellow: #FFE066;
+  --color-sage-500: #5E8B75;
+  --color-sage-100: #E4EFEA;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--color-plum-800);
+  background-color: var(--color-pink-50);
+}
+
+/* Custom Typography */
+.font-serif-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFAFBD;
+  border-radius: 5px;
+  border: 2px solid #FFF0F4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FB6F92;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 245, 247, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(251, 111, 146, 0.15);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 212, 223, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(251, 111, 146, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(251, 111, 146, 0.4);
+  box-shadow: 0 15px 35px -8px rgba(251, 111, 146, 0.22);
+  transform: translateY(-3px);
+}
+
+.glass-card-accent {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 234, 239, 0.85));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 111, 146, 0.3);
+  box-shadow: 0 12px 32px -8px rgba(251, 111, 146, 0.16);
+}
+
+/* Floral Botanical Patterns */
+.bg-daisy-pattern {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 224, 102, 0.12) 0%, transparent 15%),
+    radial-gradient(circle at 90% 80%, rgba(251, 111, 146, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(#FFB3C6 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  background-color: var(--color-pink-50);
+}
+
+/* Floating Daisy Petals Canvas Overlay */
+#daisyCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* Keyframe Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(251, 111, 146, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(251, 111, 146, 0);
+  }
+}
+
+@keyframes bloomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.bloom-element {
+  animation: bloomIn 0.5s ease-out forwards;
+}
+
+/* Badge & Tag Elements */
+.badge-daisy {
+  background: #FFF0F4;
+  color: #C23058;
+  border: 1px solid #FFCAD4;
+  transition: all 0.2s ease;
+}
+
+.badge-daisy:hover {
+  background: #FB6F92;
+  color: #FFFFFF;
+  border-color: #FB6F92;
+}
+
+/* Active Nav Links */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FB6F92;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 9999px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.nav-link.active {
+  color: #C23058;
+  font-weight: 600;
+}
+
+/* Interactive Timeline Styles */
+.timeline-stem {
+  position: relative;
+}
+.timeline-stem::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 20px;
+  width: 2px;
+  background: linear-gradient(180deg, #FB6F92, #FFCAD4, #E4EFEA);
+  border-radius: 2px;
+}
+
+/* Modal Backdrops */
+.modal-backdrop {
+  background: rgba(38, 28, 38, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Print Styles */
+@media print {
+  #daisyCanvas,
+  nav,
+  footer,
+  .no-print,
+  #petalsToggleBtn,
+  #backToTopBtn {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .glass-card {
+    box-shadow: none !important;
+    border: 1px solid #DDD !important;
+    background: #FFF !important;
+  }
+}
