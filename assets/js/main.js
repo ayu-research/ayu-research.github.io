@@ -1,6 +1,6 @@
 /**
  * Ir. Ayu Sintianingrum, S.T., M.T. Academic Portfolio - Interactive Scripts
- * Dosen & Peneliti Bidang Tenaga Listrik, Elektronika dan Internet of Things (IoT)
+ * Dosen & Peneliti Bidang Tenaga Listrik, Elektronika Daya dan Internet of Things (IoT)
  * Features: Floating Daisy Canvas, Filter & Search, Modals, Stats Counter, 1-Click Copy IDs
  */
 
