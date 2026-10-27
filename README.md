@@ -29,8 +29,8 @@ Website portofolio akademik resmi yang elegan, modern, dan interaktif dengan nua
 ## 📊 Metrik Akademik Resmi SINTA & Scholar
 
 * **SINTA Author ID:** `6820429` (Kemdiktisaintek RI)
-* **SINTA Score Overall:** `124`
-* **SINTA Score 3Yr:** `66`
+* **SINTA Score Overall:** `158`
+* **SINTA Score 3Yr:** `94`
 * **Google Scholar User ID:** `W3KMFJIAAAAJ`
 * **Afiliasi:** D4 Teknologi Rekayasa Elektronika, Jurusan Teknologi Informasi, Politeknik Negeri Lampung
 * **Bidang Keahlian:** Tenaga Listrik, Elektronika Daya dan Internet of Things (IoT)
