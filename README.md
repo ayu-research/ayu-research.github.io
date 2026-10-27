@@ -26,6 +26,49 @@ Website portofolio akademik resmi yang elegan, modern, dan interaktif dengan nua
 
 ---
 
+## 📊 Metrik Akademik Resmi SINTA & Scholar
+
+* **SINTA Author ID:** `6820429` (Kemdiktisaintek RI)
+* **SINTA Score Overall:** `124`
+* **SINTA Score 3Yr:** `66`
+* **Google Scholar User ID:** `W3KMFJIAAAAJ`
+* **Afiliasi:** D4 Teknologi Rekayasa Elektronika, Jurusan Teknologi Informasi, Politeknik Negeri Lampung
+* **Bidang Keahlian:** Tenaga Listrik, Elektronika Daya dan Internet of Things (IoT)
+
+---
+
+## 📚 Publikasi Ilmiah Faktual (SINTA & Google Scholar)
+
+1. **Optimization of Microgrid Battery Capacity using PSO with Considering Islanding Operation** (2020)
+   * *Penulis:* Ayu Sintianingrum, Khairudin, Lukmanul Hakim
+   * *Jurnal:* Journal of Engineering and Scientific Research (JESR), Vol. 2, No. 1, 2020.
+2. **Moisture Detection for Growing Medium Using Arduino Uno** (2024)
+   * *Penulis:* Ayu Sintianingrum, Tomy Pratama Zuhelmi, Iqbal May Aryanto
+   * *Jurnal:* Jurnal Informatika dan Teknik Elektro Terapan (JITET), Vol. 12, No. 3, 2024.
+3. **Automatic Fish Feeding Schedule System Using Arduino and Real-Time Clock** (2025)
+   * *Penulis:* Syaiful Mansur, Eko Hari Tiarto, Iqbal May Aryanto, Ayang Kinasih, Tomy Pratama Zuhelmi, Ayu Sintianingrum
+   * *Jurnal:* Jurnal Informatika dan Teknik Elektro Terapan (JITET), Vol. 13, No. 3, 2025.
+4. **Sistem Penghitung Jumlah Pengunjung Ruangan Secara Otomatis** (2023)
+   * *Penulis:* Iqbal May Aryanto, Syaiful Mansur, Ayu Sintianingrum
+   * *Jurnal:* INSOLOGI: Jurnal Sains dan Teknologi, Vol. 2, No. 1, 2023.
+5. **Simulasi Tegangan Lebih Akibat Sambaran Petir terhadap Penentuan Jarak Maksimum untuk Perlindungan Peralatan pada Gardu Induk** (2016)
+   * *Penulis:* Ayu Sintianingrum, Yul Martin, Endah Komalasari
+   * *Jurnal:* Electrician: Jurnal Rekayasa dan Teknologi Elektro, Vol. 10, No. 1, 2016.
+6. **Development and Experimental Evaluation of a Real-Time Egg Quality Detection System Based on Digital Image Processing and YOLO Model on Edge Devices** (2026)
+   * *Penulis:* Iqbal May Aryanto, Syaiful Mansur, Ayu Sintianingrum, Ayang Kinasih, Eko Hari Tiarto
+   * *Jurnal:* Jurnal Teknimedia: Teknologi Informasi dan Multimedia, Vol. 7, No. 1, 2026.
+
+---
+
+## 🤝 Pengabdian kepada Masyarakat (PKM) Faktual
+
+* **Sosialisasi Etika Profesi dan K3 sebagai Upaya Meningkatkan Pemahaman Siswa di SMK BLK Bandar Lampung** (2025)
+  * *Pelaksana:* Fira Marganingsih, Farhan Alfahrezi, Ayu Sintianingrum
+  * *Jurnal:* Jurnal Pengabdian Masyarakat Progresif Humanis Brainstorming, Vol. 8, No. 3, 2025.
+  * *Mitra/Sasaran:* Siswa Jurusan Teknik Jaringan Tenaga Listrik SMK Bina Latih Karya (BLK) Bandar Lampung.
+
+---
+
 ## ✨ Fitur & Karakteristik Desain
 
 1. **Estetika Soft Pink Pastel & Bunga Daisy**:
