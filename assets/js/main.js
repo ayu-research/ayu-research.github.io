@@ -1,6 +1,7 @@
 /**
- * Dr. Ayu Lestari Academic Portfolio - Interactive Scripts
- * Features: Floating Daisy Canvas, Filter & Search, Modals, Stats Counter, Form Validation
+ * Ir. Ayu Sintianingrum, S.T., M.T. Academic Portfolio - Interactive Scripts
+ * Dosen & Peneliti Bidang Tenaga Listrik, Elektronika dan Internet of Things (IoT)
+ * Features: Floating Daisy Canvas, Filter & Search, Modals, Stats Counter, 1-Click Copy IDs
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatsCounter();
   initPublicationFilters();
   initModals();
-  initContactForm();
   initBackToTop();
   initCopyAcademicIds();
 });
@@ -101,64 +101,60 @@ function initDaisyPetalsCanvas() {
           ctx.save();
           ctx.rotate(petalAngle);
           ctx.beginPath();
-          ctx.ellipse(0, -r * 1.3, r * 0.38, r * 0.75, 0, 0, Math.PI * 2);
+          ctx.ellipse(0, -r, r * 0.4, r * 0.85, 0, 0, Math.PI * 2);
           ctx.fillStyle = '#FFFFFF';
-          ctx.shadowColor = 'rgba(251, 111, 146, 0.25)';
-          ctx.shadowBlur = 3;
           ctx.fill();
+          ctx.strokeStyle = 'rgba(251, 111, 146, 0.25)';
+          ctx.lineWidth = 0.4;
+          ctx.stroke();
           ctx.restore();
         }
-        // Center Disk
+
+        // Yellow Gold Center Stamen
         ctx.beginPath();
-        ctx.arc(0, 0, r * 0.55, 0, Math.PI * 2);
-        ctx.fillStyle = '#F4A261';
+        ctx.arc(0, 0, r * 0.45, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFC107';
         ctx.fill();
-        ctx.beginPath();
-        ctx.arc(0, 0, r * 0.38, 0, Math.PI * 2);
-        ctx.fillStyle = '#FFE066';
-        ctx.fill();
+        ctx.strokeStyle = '#FFA000';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
       }
 
       ctx.restore();
     }
   }
 
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new DaisyPetal());
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new DaisyPetal());
+    }
   }
 
-  function loop() {
+  function animate() {
     if (!isEnabled) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let p of particles) {
-      p.update();
-      p.draw();
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
     }
-    animationId = requestAnimationFrame(loop);
+    animationId = requestAnimationFrame(animate);
   }
 
   function updateToggleUI() {
-    if (toggleBtn) {
-      if (isEnabled) {
-        toggleBtn.classList.add('bg-pink-100', 'text-pink-600', 'border-pink-300');
-        toggleBtn.classList.remove('bg-gray-100', 'text-gray-400');
-        if (toggleIcon) toggleIcon.className = 'fa-solid fa-fan animate-spin-slow text-pink-500';
-        if (toggleText) toggleText.textContent = 'Kelopak Daisy: Aktif';
-      } else {
-        toggleBtn.classList.remove('bg-pink-100', 'text-pink-600', 'border-pink-300');
-        toggleBtn.classList.add('bg-gray-100', 'text-gray-400');
-        if (toggleIcon) toggleIcon.className = 'fa-solid fa-circle-pause text-gray-400';
-        if (toggleText) toggleText.textContent = 'Kelopak Daisy: Hening';
-      }
+    if (!toggleBtn) return;
+    if (isEnabled) {
+      toggleBtn.classList.remove('bg-white', 'text-plum-700', 'border-pink-200');
+      toggleBtn.classList.add('bg-pink-100', 'text-pink-700', 'border-pink-300', 'shadow-sm');
+      if (toggleIcon) toggleIcon.className = 'fa-solid fa-fan animate-spin-slow text-pink-500';
+      if (toggleText) toggleText.textContent = 'Kelopak Daisy (Aktif)';
+    } else {
+      toggleBtn.classList.remove('bg-pink-100', 'text-pink-700', 'border-pink-300', 'shadow-sm');
+      toggleBtn.classList.add('bg-white', 'text-plum-700', 'border-pink-200');
+      if (toggleIcon) toggleIcon.className = 'fa-solid fa-power-off text-plum-700';
+      if (toggleText) toggleText.textContent = 'Kelopak Daisy (Nonaktif)';
     }
   }
-
-  if (isEnabled) {
-    loop();
-  } else {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
-  updateToggleUI();
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
@@ -166,7 +162,10 @@ function initDaisyPetalsCanvas() {
       localStorage.setItem('daisyPetalsEnabled', isEnabled ? 'true' : 'false');
       updateToggleUI();
       if (isEnabled) {
-        if (!animationId) loop();
+        if (!animationId) {
+          initParticles();
+          animate();
+        }
       } else {
         if (animationId) {
           cancelAnimationFrame(animationId);
@@ -177,173 +176,176 @@ function initDaisyPetalsCanvas() {
     });
   }
 
-  // Auto pause when tab hidden to optimize battery
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && animationId) {
-      cancelAnimationFrame(animationId);
-      animationId = null;
-    } else if (!document.hidden && isEnabled && !animationId) {
-      loop();
-    }
-  });
+  updateToggleUI();
+  if (isEnabled) {
+    initParticles();
+    animate();
+  }
 }
 
 /* ==========================================================================
-   2. Responsive Mobile Menu
+   2. Responsive Mobile Drawer Navigation
    ========================================================================== */
 function initMobileMenu() {
   const menuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuIcon = document.getElementById('menuIcon');
+  const closeBtn = document.getElementById('closeMobileMenuBtn');
+  const drawer = document.getElementById('mobileMenuDrawer');
+  const backdrop = document.getElementById('mobileMenuBackdrop');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
 
-  if (!menuBtn || !mobileMenu) return;
+  if (!menuBtn || !drawer || !backdrop) return;
 
-  function toggleMenu() {
-    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', !isExpanded);
-    mobileMenu.classList.toggle('hidden');
-    if (menuIcon) {
-      if (!isExpanded) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
-      } else {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
-    }
+  function openMenu() {
+    drawer.classList.remove('translate-x-full');
+    backdrop.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
   }
 
-  menuBtn.addEventListener('click', toggleMenu);
+  function closeMenu() {
+    drawer.classList.add('translate-x-full');
+    backdrop.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
 
-  // Close menu when a link is clicked
-  const mobileLinks = mobileMenu.querySelectorAll('a');
-  mobileLinks.forEach(link => {
+  menuBtn.addEventListener('click', openMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+
+  navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      menuBtn.setAttribute('aria-expanded', 'false');
-      mobileMenu.classList.add('hidden');
-      if (menuIcon) {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
+      closeMenu();
     });
   });
 }
 
 /* ==========================================================================
-   3. ScrollSpy & Smooth Nav Indicators
+   3. Smooth Scrollspy & Active Navigation Link Highlighter
    ========================================================================== */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const desktopLinks = document.querySelectorAll('nav .nav-link');
 
-  function highlightNav() {
-    let scrollY = window.pageYOffset;
+  if (!sections.length || !desktopLinks.length) return;
 
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute('id');
+  function highlightLink() {
+    let scrollY = window.pageYOffset + 120;
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
+    sections.forEach(sec => {
+      const secHeight = sec.offsetHeight;
+      const secTop = sec.offsetTop;
+      const secId = sec.getAttribute('id');
+
+      if (scrollY >= secTop && scrollY < secTop + secHeight) {
+        desktopLinks.forEach(link => {
+          link.classList.remove('text-pink-600', 'font-bold');
+          if (link.getAttribute('href') === `#${secId}`) {
+            link.classList.add('text-pink-600', 'font-bold');
           }
         });
       }
     });
   }
 
-  window.addEventListener('scroll', highlightNav, { passive: true });
+  window.addEventListener('scroll', highlightLink);
+  highlightLink();
 }
 
 /* ==========================================================================
-   4. Animated Stat Counters
+   4. Animated Metric Stats Counter
    ========================================================================== */
 function initStatsCounter() {
   const statElements = document.querySelectorAll('.counter-val');
   if (!statElements.length) return;
 
-  let hasRun = false;
+  let hasAnimated = false;
+  const container = document.getElementById('statsContainer');
+  if (!container) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !hasRun) {
-        hasRun = true;
-        statElements.forEach(el => {
-          const target = parseInt(el.getAttribute('data-target'), 10) || 0;
-          const suffix = el.getAttribute('data-suffix') || '';
-          let current = 0;
-          const duration = 1600;
-          const stepTime = 25;
-          const steps = duration / stepTime;
-          const increment = target / steps;
-
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              el.textContent = target.toLocaleString('id-ID') + suffix;
-              clearInterval(timer);
-            } else {
-              el.textContent = Math.floor(current).toLocaleString('id-ID') + suffix;
-            }
-          }, stepTime);
-        });
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        animateCounters();
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
-  const statsSection = document.getElementById('statsContainer');
-  if (statsSection) {
-    observer.observe(statsSection);
+  observer.observe(container);
+
+  function animateCounters() {
+    statElements.forEach(el => {
+      const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1800; // ms
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out quadratic
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(easeOut * target);
+
+        el.textContent = current.toLocaleString('id-ID') + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          el.textContent = target.toLocaleString('id-ID') + suffix;
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    });
   }
 }
 
 /* ==========================================================================
-   5. Publications Filtering & Real-time Search
+   5. Publication Filter Tabs and Instant Search
    ========================================================================== */
 function initPublicationFilters() {
   const tabButtons = document.querySelectorAll('.pub-tab-btn');
-  const pubCards = document.querySelectorAll('.pub-item');
   const searchInput = document.getElementById('pubSearchInput');
+  const pubItems = document.querySelectorAll('.pub-item');
   const countDisplay = document.getElementById('pubCountDisplay');
-  const noResultEl = document.getElementById('pubNoResult');
+  const noResultElement = document.getElementById('pubNoResult');
   const resetBtn = document.getElementById('resetSearchBtn');
 
-  if (!pubCards.length) return;
+  if (!pubItems.length) return;
 
-  let activeCategory = 'all';
-  let searchTerm = '';
+  let currentCategory = 'all';
+  let searchQuery = '';
 
-  function filterPublications() {
+  function applyFilters() {
     let visibleCount = 0;
+    const query = searchQuery.toLowerCase().trim();
 
-    pubCards.forEach(card => {
-      const category = card.getAttribute('data-category') || '';
-      const textContent = card.textContent.toLowerCase();
-      const matchesCategory = activeCategory === 'all' || category.includes(activeCategory);
-      const matchesSearch = searchTerm === '' || textContent.includes(searchTerm);
+    pubItems.forEach(item => {
+      const itemCat = item.getAttribute('data-category') || '';
+      const itemTitle = (item.getAttribute('data-title') || '').toLowerCase();
+      const itemMeta = (item.getAttribute('data-meta') || '').toLowerCase();
+      const itemText = item.textContent.toLowerCase();
 
-      if (matchesCategory && matchesSearch) {
-        card.classList.remove('hidden');
-        card.classList.add('bloom-element');
+      const matchCat = (currentCategory === 'all') || (itemCat === currentCategory);
+      const matchSearch = !query || itemTitle.includes(query) || itemMeta.includes(query) || itemText.includes(query);
+
+      if (matchCat && matchSearch) {
+        item.classList.remove('hidden');
         visibleCount++;
       } else {
-        card.classList.add('hidden');
-        card.classList.remove('bloom-element');
+        item.classList.add('hidden');
       }
     });
 
     if (countDisplay) {
-      countDisplay.textContent = `Menampilkan ${visibleCount} publikasi`;
+      countDisplay.textContent = `Menampilkan ${visibleCount} publikasi terpilih`;
     }
 
-    if (noResultEl) {
+    if (noResultElement) {
       if (visibleCount === 0) {
-        noResultEl.classList.remove('hidden');
+        noResultElement.classList.remove('hidden');
       } else {
-        noResultEl.classList.add('hidden');
+        noResultElement.classList.add('hidden');
       }
     }
   }
@@ -354,26 +356,27 @@ function initPublicationFilters() {
         b.classList.remove('bg-pink-600', 'text-white', 'shadow-md');
         b.classList.add('bg-white', 'text-plum-700', 'border', 'border-pink-200');
       });
-      btn.classList.add('bg-pink-600', 'text-white', 'shadow-md');
-      btn.classList.remove('bg-white', 'text-plum-700', 'border-pink-200');
 
-      activeCategory = btn.getAttribute('data-filter') || 'all';
-      filterPublications();
+      btn.classList.add('bg-pink-600', 'text-white', 'shadow-md');
+      btn.classList.remove('bg-white', 'text-plum-700', 'border', 'border-pink-200');
+
+      currentCategory = btn.getAttribute('data-filter') || 'all';
+      applyFilters();
     });
   });
 
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      searchTerm = e.target.value.trim().toLowerCase();
-      filterPublications();
+      searchQuery = e.target.value;
+      applyFilters();
     });
   }
 
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
       if (searchInput) searchInput.value = '';
-      searchTerm = '';
-      activeCategory = 'all';
+      searchQuery = '';
+      currentCategory = 'all';
       tabButtons.forEach((b, idx) => {
         if (idx === 0) {
           b.classList.add('bg-pink-600', 'text-white', 'shadow-md');
@@ -383,46 +386,44 @@ function initPublicationFilters() {
           b.classList.add('bg-white', 'text-plum-700', 'border', 'border-pink-200');
         }
       });
-      filterPublications();
+      applyFilters();
     });
   }
 
-  filterPublications();
+  applyFilters();
 }
 
 /* ==========================================================================
-   6. Modals (Abstract & BibTeX, CV Viewer, Gallery Lightbox)
+   6. Modals (Abstract Viewer & Curriculum Vitae)
    ========================================================================== */
 function initModals() {
-  // --- Abstract Modal ---
   const abstractModal = document.getElementById('abstractModal');
-  const abstractTitle = document.getElementById('abstractModalTitle');
-  const abstractMeta = document.getElementById('abstractModalMeta');
-  const abstractText = document.getElementById('abstractModalText');
-  const abstractBibtex = document.getElementById('abstractModalBibtex');
   const closeAbstractBtn = document.getElementById('closeAbstractBtn');
+  const abstractModalTitle = document.getElementById('abstractModalTitle');
+  const abstractModalMeta = document.getElementById('abstractModalMeta');
+  const abstractModalText = document.getElementById('abstractModalText');
+  const abstractModalBibtex = document.getElementById('abstractModalBibtex');
   const copyBibtexBtn = document.getElementById('copyBibtexBtn');
 
-  const abstractTriggers = document.querySelectorAll('[data-open-abstract]');
-  abstractTriggers.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.pub-item');
-      if (!card) return;
+  // Open Abstract Modal
+  const openAbstractBtns = document.querySelectorAll('[data-open-abstract]');
+  openAbstractBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const pubCard = e.target.closest('.pub-item');
+      if (!pubCard || !abstractModal) return;
 
-      const title = card.getAttribute('data-title') || 'Publikasi Ilmiah';
-      const meta = card.getAttribute('data-meta') || '';
-      const abstract = card.getAttribute('data-abstract') || 'Abstrak tidak tersedia.';
-      const bibtex = card.getAttribute('data-bibtex') || '';
+      const title = pubCard.getAttribute('data-title') || 'Publikasi Ilmiah';
+      const meta = pubCard.getAttribute('data-meta') || '';
+      const abstract = pubCard.getAttribute('data-abstract') || 'Abstrak tidak tersedia.';
+      const bibtex = pubCard.getAttribute('data-bibtex') || '';
 
-      if (abstractTitle) abstractTitle.textContent = title;
-      if (abstractMeta) abstractMeta.textContent = meta;
-      if (abstractText) abstractText.textContent = abstract;
-      if (abstractBibtex) abstractBibtex.textContent = bibtex;
+      if (abstractModalTitle) abstractModalTitle.textContent = title;
+      if (abstractModalMeta) abstractModalMeta.textContent = meta;
+      if (abstractModalText) abstractModalText.textContent = abstract;
+      if (abstractModalBibtex) abstractModalBibtex.textContent = bibtex;
 
-      if (abstractModal) {
-        abstractModal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-      }
+      abstractModal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
     });
   });
 
@@ -433,27 +434,31 @@ function initModals() {
     });
   }
 
-  if (copyBibtexBtn && abstractBibtex) {
+  // Copy BibTeX citation
+  if (copyBibtexBtn && abstractModalBibtex) {
     copyBibtexBtn.addEventListener('click', () => {
-      const text = abstractBibtex.textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        const original = copyBibtexBtn.innerHTML;
-        copyBibtexBtn.innerHTML = '<i class="fa-solid fa-check text-green-500 mr-1.5"></i> Tersalin!';
+      const textToCopy = abstractModalBibtex.textContent;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalHtml = copyBibtexBtn.innerHTML;
+        copyBibtexBtn.innerHTML = '<i class="fa-solid fa-check text-emerald-600"></i><span>Tersalin!</span>';
+        copyBibtexBtn.classList.add('bg-emerald-100', 'text-emerald-800');
+
         setTimeout(() => {
-          copyBibtexBtn.innerHTML = original;
+          copyBibtexBtn.innerHTML = originalHtml;
+          copyBibtexBtn.classList.remove('bg-emerald-100', 'text-emerald-800');
         }, 2200);
       });
     });
   }
 
-  // --- CV Modal ---
+  // CV Modal
   const cvModal = document.getElementById('cvModal');
-  const cvTriggers = document.querySelectorAll('[data-open-cv]');
+  const openCvBtns = document.querySelectorAll('[data-open-cv]');
   const closeCvBtn = document.getElementById('closeCvBtn');
   const printCvBtn = document.getElementById('printCvBtn');
 
-  cvTriggers.forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
+  openCvBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       if (cvModal) {
         cvModal.classList.remove('hidden');
@@ -475,37 +480,8 @@ function initModals() {
     });
   }
 
-  // --- Gallery Lightbox Modal ---
-  const galleryModal = document.getElementById('galleryModal');
-  const galleryImage = document.getElementById('galleryModalImage');
-  const galleryCaption = document.getElementById('galleryModalCaption');
-  const closeGalleryBtn = document.getElementById('closeGalleryBtn');
-  const galleryTriggers = document.querySelectorAll('[data-gallery-src]');
-
-  galleryTriggers.forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.getAttribute('data-gallery-src');
-      const caption = item.getAttribute('data-gallery-caption') || '';
-
-      if (galleryImage) galleryImage.src = src;
-      if (galleryCaption) galleryCaption.textContent = caption;
-
-      if (galleryModal) {
-        galleryModal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-      }
-    });
-  });
-
-  if (closeGalleryBtn && galleryModal) {
-    closeGalleryBtn.addEventListener('click', () => {
-      galleryModal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    });
-  }
-
   // Close modals on backdrop click or Escape key
-  [abstractModal, cvModal, galleryModal].forEach(modal => {
+  [abstractModal, cvModal].forEach(modal => {
     if (!modal) return;
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
@@ -517,7 +493,7 @@ function initModals() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      [abstractModal, cvModal, galleryModal].forEach(modal => {
+      [abstractModal, cvModal].forEach(modal => {
         if (modal && !modal.classList.contains('hidden')) {
           modal.classList.add('hidden');
           document.body.classList.remove('overflow-hidden');
@@ -528,47 +504,7 @@ function initModals() {
 }
 
 /* ==========================================================================
-   7. Contact & Consultation Form Handler with Toast
-   ========================================================================== */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const toast = document.getElementById('toastNotification');
-  const toastMessage = document.getElementById('toastMessage');
-
-  if (!form) return;
-
-  function showToast(msg) {
-    if (!toast) return;
-    if (toastMessage) toastMessage.textContent = msg;
-    toast.classList.remove('hidden');
-    toast.classList.add('bloom-element');
-
-    setTimeout(() => {
-      toast.classList.add('hidden');
-    }, 4500);
-  }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = form.querySelector('#senderName')?.value.trim();
-    const email = form.querySelector('#senderEmail')?.value.trim();
-    const purpose = form.querySelector('#contactPurpose')?.value;
-    const message = form.querySelector('#senderMessage')?.value.trim();
-
-    if (!name || !email || !message) {
-      alert('Mohon lengkapi Nama, Email, dan Pesan Anda.');
-      return;
-    }
-
-    // Success simulation
-    showToast(`Terima kasih, ${name}! Pesan mengenai "${purpose || 'Konsultasi'}" berhasil dikirim. Dr. Ayu Lestari akan segera merespons.`);
-    form.reset();
-  });
-}
-
-/* ==========================================================================
-   8. Back to Top Button
+   7. Back to Top Button
    ========================================================================== */
 function initBackToTop() {
   const btn = document.getElementById('backToTopBtn');
@@ -582,7 +518,7 @@ function initBackToTop() {
       btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
       btn.classList.remove('opacity-100', 'translate-y-0');
     }
-  }, { passive: true });
+  });
 
   btn.addEventListener('click', () => {
     window.scrollTo({
@@ -593,22 +529,38 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   9. Academic ID 1-Click Copy
+   8. 1-Click Copy Academic Identifiers (SINTA, Scholar, etc.)
    ========================================================================== */
 function initCopyAcademicIds() {
   const copyButtons = document.querySelectorAll('[data-copy-id]');
-  copyButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const val = btn.getAttribute('data-copy-id');
-      if (!val) return;
+  const toast = document.getElementById('toastNotification');
+  const toastMessage = document.getElementById('toastMessage');
 
-      navigator.clipboard.writeText(val).then(() => {
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-check text-green-500"></i>';
+  function showToast(msg) {
+    if (!toast) return;
+    if (toastMessage) toastMessage.textContent = msg;
+    toast.classList.remove('hidden');
+
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3500);
+  }
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idVal = btn.getAttribute('data-copy-id');
+      if (!idVal) return;
+
+      navigator.clipboard.writeText(idVal).then(() => {
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-600"></i>';
+        showToast(`ID Akademik "${idVal}" berhasil disalin ke clipboard!`);
+
         setTimeout(() => {
-          btn.innerHTML = original;
-        }, 1800);
+          btn.innerHTML = originalHtml;
+        }, 2000);
+      }).catch(() => {
+        showToast(`ID Akademik: ${idVal}`);
       });
     });
   });
