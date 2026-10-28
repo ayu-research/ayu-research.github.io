@@ -45,16 +45,13 @@ Website portofolio akademik resmi yang elegan, modern, dan interaktif dengan nua
 2. **Moisture Detection for Growing Medium Using Arduino Uno** (2024)
    * *Penulis:* Ayu Sintianingrum, Tomy Pratama Zuhelmi, Iqbal May Aryanto
    * *Jurnal:* Jurnal Informatika dan Teknik Elektro Terapan (JITET), Vol. 12, No. 3, 2024.
-3. **Automatic Fish Feeding Schedule System Using Arduino and Real-Time Clock** (2025)
-   * *Penulis:* Syaiful Mansur, Eko Hari Tiarto, Iqbal May Aryanto, Ayang Kinasih, Tomy Pratama Zuhelmi, Ayu Sintianingrum
-   * *Jurnal:* Jurnal Informatika dan Teknik Elektro Terapan (JITET), Vol. 13, No. 3, 2025.
-4. **Sistem Penghitung Jumlah Pengunjung Ruangan Secara Otomatis** (2023)
+3. **Sistem Penghitung Jumlah Pengunjung Ruangan Secara Otomatis** (2023)
    * *Penulis:* Iqbal May Aryanto, Syaiful Mansur, Ayu Sintianingrum
    * *Jurnal:* INSOLOGI: Jurnal Sains dan Teknologi, Vol. 2, No. 1, 2023.
-5. **Simulasi Tegangan Lebih Akibat Sambaran Petir terhadap Penentuan Jarak Maksimum untuk Perlindungan Peralatan pada Gardu Induk** (2016)
+4. **Simulasi Tegangan Lebih Akibat Sambaran Petir terhadap Penentuan Jarak Maksimum untuk Perlindungan Peralatan pada Gardu Induk** (2016)
    * *Penulis:* Ayu Sintianingrum, Yul Martin, Endah Komalasari
    * *Jurnal:* Electrician: Jurnal Rekayasa dan Teknologi Elektro, Vol. 10, No. 1, 2016.
-6. **Development and Experimental Evaluation of a Real-Time Egg Quality Detection System Based on Digital Image Processing and YOLO Model on Edge Devices** (2026)
+5. **Development and Experimental Evaluation of a Real-Time Egg Quality Detection System Based on Digital Image Processing and YOLO Model on Edge Devices** (2026)
    * *Penulis:* Iqbal May Aryanto, Syaiful Mansur, Ayu Sintianingrum, Ayang Kinasih, Eko Hari Tiarto
    * *Jurnal:* Jurnal Teknimedia: Teknologi Informasi dan Multimedia, Vol. 7, No. 1, 2026.
 
@@ -62,10 +59,15 @@ Website portofolio akademik resmi yang elegan, modern, dan interaktif dengan nua
 
 ## 🤝 Pengabdian kepada Masyarakat (PKM) Faktual
 
-* **Sosialisasi Etika Profesi dan K3 sebagai Upaya Meningkatkan Pemahaman Siswa di SMK BLK Bandar Lampung** (2025)
-  * *Pelaksana:* Fira Marganingsih, Farhan Alfahrezi, Ayu Sintianingrum
-  * *Jurnal:* Jurnal Pengabdian Masyarakat Progresif Humanis Brainstorming, Vol. 8, No. 3, 2025.
-  * *Mitra/Sasaran:* Siswa Jurusan Teknik Jaringan Tenaga Listrik SMK Bina Latih Karya (BLK) Bandar Lampung.
+1. **Pengenalan Dan Pelatihan Dasar Internet Of Things (IoT) Bagi Siswa SMK Negeri 2 Bandar Lampung** (2026/2027) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+2. **Implementasi Dan Edukasi Micro-Solar Panel Untuk Penerangan Luar Ruangan Dan Fasilitas Portable Charging** (2026/2027) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+3. **Membangun Karakter dan Keselamatan: Kenalkan Etika Profesi dan K3 di SMK BLK Bandar Lampung** (2025/2026) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+4. **INOVASI KREATIF MITRA VOKASI Hilirisasi Sistem Cerdas dan Energi Terbarukan dalam Otomatisasi Pemberian Pakan Ikan untuk Mendukung Keberlanjutan dan Efisiensi UMKM Perikanan** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+5. **Pengembangan Teknologi untuk Mendukung Produksi Hasil Cabai dan Memasarkannya di Media Sosial** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+6. **Opini: Penyebab Gangguan Transmisi SUTET 275 KV Lubuk Linggau – Lahat** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+7. **Pengenalan Energi Listrik Bagi Siswa Sekolah Dasar** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+8. **Pembuatan Alat Peraga Medan Magnet di Sekitar Kawat Berarus Listrik** (2023/2024) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+9. **Pelatihan dan Pembimbingan Pengelola Website Resmi dan Media Sosial Milik Dinas Pemadam Kebakaran dan Penyelamatan Kota Bandar Lampung** (2023/2024) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
 
 ---
 
