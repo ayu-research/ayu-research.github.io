@@ -1,6 +1,7 @@
 # Website Portofolio Akademik: Ir. Ayu Sintianingrum, S.T., M.T.
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Portfolio-FB6F92?style=for-the-badge&logo=github)](https://ayu-research.github.io)
+[![Email Kontak](https://img.shields.io/badge/Email-ayusintianingrum%40polinela.ac.id-D81B60?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ayusintianingrum@polinela.ac.id)
 [![Weather Station](https://img.shields.io/badge/Weather%20Station-Live%20Telemetry-5E8B75?style=for-the-badge&logo=espressif)](https://ayu-research.github.io/ws/)
 [![SINTA Kemdiktisaintek](https://img.shields.io/badge/SINTA-6820429-2E294E?style=for-the-badge)](https://sinta.kemdiktisaintek.go.id/authors/profile/6820429/)
 [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-W3KMFJIAAAAJ-4285F4?style=for-the-badge&logo=google-scholar)](https://scholar.google.com/citations?user=W3KMFJIAAAAJ&hl=id&oi=ao)
@@ -12,6 +13,7 @@ Website portofolio akademik resmi yang elegan, modern, dan interaktif dengan nua
 ## 🌸 Tautan Resmi
 
 * **Website Portofolio:** [https://ayu-research.github.io](https://ayu-research.github.io)
+* **Email Kontak Resmi:** [ayusintianingrum@polinela.ac.id](mailto:ayusintianingrum@polinela.ac.id)
 * **Proyek Telemetri Cuaca (IoT Weather Station):** [https://ayu-research.github.io/ws/](https://ayu-research.github.io/ws/)
 * **Profil SINTA Kemdiktisaintek (ID 6820429):** [https://sinta.kemdiktisaintek.go.id/authors/profile/6820429/](https://sinta.kemdiktisaintek.go.id/authors/profile/6820429/)
 * **Profil Google Scholar:** [https://scholar.google.com/citations?user=W3KMFJIAAAAJ&hl=id&oi=ao](https://scholar.google.com/citations?user=W3KMFJIAAAAJ&hl=id&oi=ao)
@@ -59,15 +61,15 @@ Website portofolio akademik resmi yang elegan, modern, dan interaktif dengan nua
 
 ## 🤝 Pengabdian kepada Masyarakat (PKM) Faktual
 
-1. **Pengenalan Dan Pelatihan Dasar Internet Of Things (IoT) Bagi Siswa SMK Negeri 2 Bandar Lampung** (2026/2027) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-2. **Implementasi Dan Edukasi Micro-Solar Panel Untuk Penerangan Luar Ruangan Dan Fasilitas Portable Charging** (2026/2027) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-3. **Membangun Karakter dan Keselamatan: Kenalkan Etika Profesi dan K3 di SMK BLK Bandar Lampung** (2025/2026) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-4. **INOVASI KREATIF MITRA VOKASI Hilirisasi Sistem Cerdas dan Energi Terbarukan dalam Otomatisasi Pemberian Pakan Ikan untuk Mendukung Keberlanjutan dan Efisiensi UMKM Perikanan** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-5. **Pengembangan Teknologi untuk Mendukung Produksi Hasil Cabai dan Memasarkannya di Media Sosial** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-6. **Opini: Penyebab Gangguan Transmisi SUTET 275 KV Lubuk Linggau – Lahat** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-7. **Pengenalan Energi Listrik Bagi Siswa Sekolah Dasar** (2024/2025) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-8. **Pembuatan Alat Peraga Medan Magnet di Sekitar Kawat Berarus Listrik** (2023/2024) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
-9. **Pelatihan dan Pembimbingan Pengelola Website Resmi dan Media Sosial Milik Dinas Pemadam Kebakaran dan Penyelamatan Kota Bandar Lampung** (2023/2024) — 1 Tahun, Kategori Kegiatan sesuai dengan PO BKD 2021.
+1. **Pengenalan Dan Pelatihan Dasar Internet Of Things (IoT) Bagi Siswa SMK Negeri 2 Bandar Lampung** (2026/2027) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+2. **Implementasi Dan Edukasi Micro-Solar Panel Untuk Penerangan Luar Ruangan Dan Fasilitas Portable Charging** (2026/2027) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+3. **Membangun Karakter dan Keselamatan: Kenalkan Etika Profesi dan K3 di SMK BLK Bandar Lampung** (2025/2026) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+4. **INOVASI KREATIF MITRA VOKASI Hilirisasi Sistem Cerdas dan Energi Terbarukan dalam Otomatisasi Pemberian Pakan Ikan untuk Mendukung Keberlanjutan dan Efisiensi UMKM Perikanan** (2024/2025) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+5. **Pengembangan Teknologi untuk Mendukung Produksi Hasil Cabai dan Memasarkannya di Media Sosial** (2024/2025) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+6. **Opini: Penyebab Gangguan Transmisi SUTET 275 KV Lubuk Linggau – Lahat** (2024/2025) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+7. **Pengenalan Energi Listrik Bagi Siswa Sekolah Dasar** (2024/2025) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+8. **Pembuatan Alat Peraga Medan Magnet di Sekitar Kawat Berarus Listrik** (2023/2024) — Kategori Kegiatan sesuai dengan PO BKD 2021.
+9. **Pelatihan dan Pembimbingan Pengelola Website Resmi dan Media Sosial Milik Dinas Pemadam Kebakaran dan Penyelamatan Kota Bandar Lampung** (2023/2024) — Kategori Kegiatan sesuai dengan PO BKD 2021.
 
 ---
 
